@@ -1,0 +1,18 @@
+{
+    "type": "csvcollector",
+    "_id": "Task_csvcollector_1",
+    "jobId": "Job_csvcollector",
+    "productDefinitionId": "product/output",
+    "stage": "operational",
+    "outputUrl": "outputUrl1",
+    "dependsOn": [
+        "task1", "task2"
+    ],
+    "executionContext": {
+        "assignToken": "assignToken",
+        "retries": 0,
+        "awsBatchJobId": "awsBatchJobId",
+        "containerInstanceArn": "containerInstanceArn",
+        "logStreamName": "logStreamName"
+    }
+}

@@ -1,0 +1,90 @@
+{
+  "type": "ncaggregate",
+  "_id": "Task_ncaggregate_1",
+  "jobId": "Job_ncaggregate",
+  "productDefinitionId": "product/output",
+  "metadataId": "product/output/3",
+  "stage": "operational",
+  "baseUrl": "baseUrl3",
+  "timeInstants": [
+    {
+      "value": 0.1,
+      "inputs": [
+        {
+          "inputId": "product/input1",
+          "fileIndexBounds": [
+            {
+              "metadataId": "product/input1/2019-01",
+              "startIndex": 0,
+              "endIndex": 23
+            },
+            {
+              "metadataId": "product/input1/2019-02",
+              "startIndex": 0,
+              "endIndex": 23
+            }
+          ]
+        },
+        {
+          "inputId": "product/input2",
+          "fileIndexBounds": [
+            {
+              "metadataId": "product/input2/2019-01",
+              "startIndex": 0,
+              "endIndex": 23
+            },
+            {
+              "metadataId": "product/input2/2019-02",
+              "startIndex": 0,
+              "endIndex": 23
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "value": 0.2,
+      "inputs": [
+        {
+          "inputId": "product/input1",
+          "fileIndexBounds": [
+            {
+              "metadataId": "product/input1/2019-01",
+              "startIndex": 24,
+              "endIndex": 47
+            },
+            {
+              "metadataId": "product/input1/2019-02",
+              "startIndex": 24,
+              "endIndex": 47
+            }
+          ]
+        },
+        {
+          "inputId": "product/input2",
+          "fileIndexBounds": [
+            {
+              "metadataId": "product/input2/2019-01",
+              "startIndex": 24,
+              "endIndex": 47
+            },
+            {
+              "metadataId": "product/input2/2019-02",
+              "startIndex": 24,
+              "endIndex": 47
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dependsOn": [
+  ],
+  "executionContext": {
+    "assignToken": "assignToken",
+    "retries": 0,
+    "awsBatchJobId": "awsBatchJobId",
+    "containerInstanceArn": "containerInstanceArn",
+    "logStreamName": "logStreamName"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "_id": "extraction-request-two",
+  "sites": [
+    {
+      "name": "Site 1",
+      "lat": "-18.60209401",
+      "lon": "146.4874632"
+    }
+  ],
+  "dataCollection": "downloads__ereefs__gbr1_2-0",
+  "variables": [
+    "salt"
+  ],
+  "dateRangeFrom": "2015-11-01",
+  "dateRangeTo": "2015-11-10",
+  "timeStep": "hourly",
+  "depths": [
+    "-315.10"
+  ],
+  "executionContext": {
+    "jobId": "ParentJobId",
+    "otherFlag": true
+  },
+  "createdAt": "2020-01-17T00:38:05.323Z",
+  "updatedAt": "2020-01-17T00:38:05.364Z"
+}

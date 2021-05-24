@@ -1,0 +1,13 @@
+{
+  "type": "ncanimate",
+  "_id": "Task_ncanimate_1",
+  "jobId": "Job_ncanimate",
+  "productDefinitionId": "product/output",
+  "executionContext": {
+    "containerInstanceArn": "arn:aws:ecs:ap-southeast-2:accountId:container-instance/uuid",
+    "retries": 1
+  },
+  "region": "region1",
+  "dependsOn": [
+  ]
+}

@@ -1,0 +1,31 @@
+# Workflow executed on "push" events.
+name: push
+
+on: push
+
+jobs:
+
+  # Run tests in Maven.
+  test:
+    runs-on: ubuntu-latest
+
+    # Start MongoDB in a Docker container for testing.
+    services:
+      mongodb:
+        image: mongo:4.2
+        ports:
+          - 27017
+
+    # Run the tests in a Maven Docker container.
+    container: 
+      image: maven:3.6-alpine
+      env:
+        MONGODB_URL: 'mongodb://mongodb:27017'
+    
+    steps:
+
+      # Retrieve the code from Github.
+      - uses: actions/checkout@v2
+        
+      - name: Execute tests with Maven.
+        run: mvn -B clean test

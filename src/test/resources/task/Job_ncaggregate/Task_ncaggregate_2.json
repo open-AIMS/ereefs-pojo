@@ -1,0 +1,102 @@
+{
+    "type": "ncaggregate",
+    "_id": "Task_ncaggregate_2",
+    "jobId": "Job_ncaggregate",
+    "productDefinitionId": "product/output",
+    "metadataId": "product/output/4",
+    "baseUrl": "baseUrl4",
+    "timeInstants": [
+        {
+            "value": 0.3,
+            "inputs": [
+                {
+                    "inputId": "product/input1",
+                    "fileIndexBounds": [
+                        {
+                            "metadataId": "product/input1/2019-01",
+                            "startIndex": 0,
+                            "endIndex": 23
+                        },
+                        {
+                            "metadataId": "product/input1/2019-02",
+                            "startIndex": 0,
+                            "endIndex": 23
+                        }
+                    ]
+                },
+                {
+                    "inputId": "product/input2",
+                    "fileIndexBounds": [
+                        {
+                            "metadataId": "product/input2/2019-01",
+                            "startIndex": 0,
+                            "endIndex": 23
+                        },
+                        {
+                            "metadataId": "product/input2/2019-02",
+                            "startIndex": 0,
+                            "endIndex": 23
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "value": 0.4,
+            "inputs": [
+                {
+                    "inputId": "product/input1",
+                    "fileIndexBounds": [
+                        {
+                            "metadataId": "product/input1/2019-01",
+                            "startIndex": 24,
+                            "endIndex": 47
+                        },
+                        {
+                            "metadataId": "product/input1/2019-02",
+                            "startIndex": 24,
+                            "endIndex": 47
+                        }
+                    ]
+                },
+                {
+                    "inputId": "product/input2",
+                    "fileIndexBounds": [
+                        {
+                            "metadataId": "product/input2/2019-01",
+                            "startIndex": 24,
+                            "endIndex": 47
+                        },
+                        {
+                            "metadataId": "product/input2/2019-02",
+                            "startIndex": 24,
+                            "endIndex": 47
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "dependsOn": [
+        "Task_ncaggregate_1"
+    ],
+    "outcome": {
+        "generatedFiles": [
+            {
+                "type": "netcdf",
+                "url": "netcdfUrl"
+            },
+            {
+                "type": "summary",
+                "url": "summaryUrl"
+            }
+        ]
+    },
+    "executionContext": {
+        "assignToken": "assignToken",
+        "retries": 0,
+        "awsBatchJobId": "awsBatchJobId",
+        "containerInstanceArn": "containerInstanceArn",
+        "logStreamName": "logStreamName"
+    }
+}

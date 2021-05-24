@@ -1,0 +1,225 @@
+{
+  "_id": "products/ncaggregate",
+  "type": "ncaggregate",
+  "enabled": true,
+  "stage": "prototype",
+  "lastModified": "2019-08-08T16:40:00.000+10:00",
+  "targetTimeZone": "Australia/Brisbane",
+  "filters": {
+    "dateRanges": [
+      {
+        "from": "2016-01-01",
+        "to": "2016-01-03"
+      },
+      {
+        "from": "2017-01-01",
+        "to": "2017-01-10"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "products/ncaggregate/input1",
+      "type": "netcdf",
+      "timeIncrement": "hourly",
+      "fileDuration": "daily",
+      "completeFilesOnly": true,
+      "variables": [
+        "variable1",
+        "variable2"
+      ]
+    }
+  ],
+  "preProcessingTasks": [
+    {
+      "type": "FileBased",
+      "properties": {
+        "stringProperty": "FileBasedStringProperty",
+        "doubleProperty": 0.01,
+        "booleanPropertyTrue": true,
+        "booleanPropertyFalse": false,
+        "intProperty": 1
+      },
+      "files": [
+        {
+          "url": "file:file1.csv",
+          "bindName": "file1BindName",
+          "properties": {
+            "stringProperty": "file1StringValue",
+            "doubleProperty": 0.01,
+            "booleanPropertyTrue": true,
+            "booleanPropertyFalse": false,
+            "intProperty": 1
+          }
+        },
+        {
+          "url": "file:file2.csv",
+          "bindName": "file2BindName",
+          "properties": {
+            "stringProperty": "file2StringValue",
+            "doubleProperty": 0.02,
+            "booleanPropertyTrue": true,
+            "booleanPropertyFalse": false,
+            "intProperty": 2
+          }
+        },
+        {
+          "url": "file:file3.csv",
+          "bindName": "file3BindName",
+          "properties": {
+            "stringProperty": "file2StringValue",
+            "doubleProperty": 0.03,
+            "booleanPropertyTrue": true,
+            "booleanPropertyFalse": false,
+            "intProperty": 3
+          }
+        }
+      ]
+    },
+    {
+      "type": "SiteListBased",
+      "bindName": "siteListBindName",
+      "sites": [
+        {
+          "name": "Site 1",
+          "lat": 1.1,
+          "lon": 1.2
+        },
+        {
+          "name": "Site 2",
+          "lat": 2.1,
+          "lon": 2.2
+        }
+      ]
+    }
+  ],
+  "outputs": {
+    "strategy": "daily",
+    "baseUrl": "file://baseUrl",
+    "completeFilesOnly": false,
+    "files": [
+      {
+        "type": "netcdf",
+        "regularGridMapperCacheBindName": "regularGridMapper:0.03",
+        "globalAttributes": {
+          "firstAttribute": "firstValue"
+        }
+      },
+      {
+        "type": "zone_summary",
+        "zoneNamesBindName": "csv:gbr_zone_names",
+        "indexToZoneIdMapBindName": "geojson:indexToZoneIdMap"
+      }
+    ]
+  },
+  "action": {
+    "period": "none",
+    "depths": [
+      1.5,
+      0,
+      -1.5
+    ],
+    "variables": [
+      "variable1",
+      "variable2"
+    ],
+    "operators": [
+      {
+        "name": "MEAN_TEMP",
+        "enabled": true,
+        "operatorType": "MEAN",
+        "inputVariables": [
+          "temp"
+        ],
+        "outputVariables": [
+          {
+            "attributes": {
+              "short_name": "mean_temp",
+              "long_name": "mean_temp",
+              "standard_name": "mean_temp"
+            }
+          }
+        ]
+      },
+      {
+        "name": "WIND_SPEED",
+        "enabled": true,
+        "operatorType": "SPEED",
+        "inputVariables": [
+          "wspeed_u",
+          "wspeed_v"
+        ],
+        "outputVariables": [
+          {
+            "attributes": {
+              "short_name": "min_wspeed",
+              "aggregation": "minimum_speed",
+              "long_name": "minimum_wind_speed",
+              "standard_name": "minimum_wind_speed",
+              "vector_name": "NONE",
+              "vector_components": "NONE",
+              "scaledQuantityKind_id": "NONE"
+            }
+          },
+          {
+            "attributes": {
+              "short_name": "mean_wspeed",
+              "aggregation": "mean_speed",
+              "long_name": "mean_wind_speed",
+              "standard_name": "mean_wind_speed",
+              "vector_name": "NONE",
+              "vector_components": "NONE",
+              "scaledQuantityKind_id": "NONE"
+            }
+          },
+          {
+            "attributes": {
+              "short_name": "max_wspeed",
+              "aggregation": "maximum_speed",
+              "long_name": "maximum_wind_speed",
+              "standard_name": "maximum_wind_speed",
+              "vector_name": "NONE",
+              "vector_components": "NONE",
+              "scaledQuantityKind_id": "NONE"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Threshold Value Exceedance Count",
+        "operatorType": "THRESHOLD_VALUE_EXCEEDANCE_COUNT",
+        "enabled": true,
+        "accumulationTimeSlices": 1,
+        "threshold": 12.3,
+        "inputVariables": [
+          "temp"
+        ],
+        "outputVariables": [
+          {
+            "attributes": {
+              "short_name": "temp_above_threshold"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Threshold Zonal Exceedance Count",
+        "operatorType": "THRESHOLD_ZONAL_EXCEEDANCE_COUNT",
+        "enabled": true,
+        "accumulationTimeSlices": 1,
+        "zonesInputId": "zone_id",
+        "thresholdsInputId": "threshold_id",
+        "inputVariables": [
+          "temp"
+        ],
+        "outputVariables": [
+          {
+            "attributes": {
+              "short_name": "temp_above_threshold"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+## Generic .gitignore settings
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+*.iml
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# IntelliJ files
+.idea/
+
+# Maven files
+target/
+
+# Vagrant files
+.vagrant/
+
+## App-specific .gitignore settings.

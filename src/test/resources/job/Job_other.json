@@ -1,0 +1,23 @@
+{
+  "_id" : "Job_other",
+  "createdBy" : "JOB_PLANNER",
+  "triggeredBy": "OPERATIONAL",
+  "status" : "AWAITING_APPROVAL",
+  "history" : [
+    {
+      "description" : "Job created by JobPlanner",
+      "timestamp" : "2019-03-28T09:38:55+10:00",
+      "status" : "CREATED"
+    },
+    {
+      "timestamp" : "2019-11-14T11:56:32+10:00",
+      "status" : "APPROVED",
+      "description" : "Status changed to APPROVED by JobApprover."
+    },
+    {
+      "timestamp" : "2019-11-14T11:56:35+10:00",
+      "status" : "FAILED",
+      "description" : "Status changed to FAILED by JobScheduler"
+    }
+  ]
+}

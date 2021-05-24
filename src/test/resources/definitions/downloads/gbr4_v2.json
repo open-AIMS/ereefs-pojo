@@ -1,0 +1,10 @@
+{
+  "_id": "downloads__ereefs__gbr4_v2",
+  "enabled": true,
+  "catalogueUrl": "http://dapds00.nci.org.au/thredds/catalog/fx3/gbr4_v2/catalog.xml",
+  "filenameTemplate": "gbr4_simple_{year}-{month}.nc",
+  "output": {
+    "destination": "s3://ereefs-nci-mirror/gbr4_v2",
+    "downloadDir": "/tmp/netcdf/gbr4_v2"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "basic",
+  "_id": "Task_basic_2",
+  "jobId": "Job_basic",
+  "productDefinitionId": "product_definition",
+  "stage": "prototype",
+  "dependsOn": [
+    "Task_basic_1"
+  ]
+}

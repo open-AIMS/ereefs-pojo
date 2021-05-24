@@ -1,0 +1,9 @@
+{
+  "type": "basic",
+  "_id": "Task_basic_1",
+  "jobId": "Job_basic",
+  "productDefinitionId": "product_definition",
+  "stage": "discontinued",
+  "dependsOn": [
+  ]
+}
