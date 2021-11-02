@@ -107,6 +107,10 @@ public class MetadataDaoFileImpl extends AbstractPojoDaoFileImpl<Metadata>
         } catch (IOException e) {
             throw new RuntimeException("Failed to write Metadata object.", e);
         }
+
+        // Invalidate the cache.
+        this.isCached = false;
+
         return metadata;
     }
 
@@ -116,6 +120,10 @@ public class MetadataDaoFileImpl extends AbstractPojoDaoFileImpl<Metadata>
             jsonObject.getString("_id"),
             jsonObject.toString(4)
         );
+
+        // Invalidate the cache.
+        this.isCached = false;
+
         return jsonObject;
     }
 
