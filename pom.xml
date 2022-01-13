@@ -8,7 +8,7 @@
     <artifactId>ereefs-pojo</artifactId>
     <name>eReef POJO library</name>
 
-    <version>1.7.2</version>
+    <version>1.7.3</version>
     <licenses>
         <license>
             <name>MIT License</name>
@@ -90,6 +90,14 @@
         </plugins>
     </reporting>
 
+    <repositories>
+        <!-- Maven repo on Open-AIMS for public packages. -->
+        <repository>
+            <id>github_openaims</id>
+            <name>GitHub Open-AIMS repo</name>
+            <url>https://maven.pkg.github.com/open-AIMS/*</url>
+        </repository>
+    </repositories>
 
     <dependencies>
 
@@ -109,6 +117,11 @@
 
         <!-- Logging. -->
         <dependency>
+            <groupId>au.gov.aims</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17-aims</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.30</version>
@@ -119,6 +132,12 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.30</version>
             <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Testing. -->
