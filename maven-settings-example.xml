@@ -2,8 +2,9 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
+        <!-- Resolve Open-AIMS dependencies when running tests or building the package -->
         <server>
-            <id>github-packages</id>
+            <id>github_openaims</id>
             <username>${GITHUB_USERNAME}</username>
             <password>${GITHUB_TOKEN}</password>
         </server>

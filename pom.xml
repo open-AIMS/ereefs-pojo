@@ -173,7 +173,7 @@
 
     <distributionManagement>
         <repository>
-            <id>github-packages</id>
+            <id>github_openaims</id>
             <name>GitHub OWNER Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/open-AIMS/ereefs-pojo</url>
         </repository>
