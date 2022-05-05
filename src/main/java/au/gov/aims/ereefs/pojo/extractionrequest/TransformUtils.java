@@ -82,6 +82,32 @@ public class TransformUtils {
                     false,
                     null
                 ));
+            
+            dataCollectionId = "downloads__ereefs__gbr1_2-0-river_tracing";
+            targetProductDefinitionId = "products__ncaggregate__ereefs__gbr1_2-0__river_tracing__raw";
+            put(
+                    dataCollectionId,
+                    DataExtractionProductDefinition.NetCDFInput.make(
+                            targetProductDefinitionId,
+                            "netcdf",
+                            "daily",
+                            "daily",
+                            false,
+                            null
+                    ));
+
+            dataCollectionId = "downloads__ereefs__gbr4_v2-river_tracing";
+            targetProductDefinitionId = "products__ncaggregate__ereefs__gbr4_v2__river_tracing__raw";
+            put(
+                    dataCollectionId,
+                    DataExtractionProductDefinition.NetCDFInput.make(
+                            targetProductDefinitionId,
+                            "netcdf",
+                            "daily",
+                            "monthly",
+                            false,
+                            null
+                    ));
         }};
 
     /**
