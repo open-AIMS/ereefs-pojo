@@ -12,7 +12,7 @@ eReefs POJO Shared Library
 </p>
 
 
-A shared library for accessing core eReefs POJOs (plan old Java objects) from a repository. A POJO
+A shared library for accessing core eReefs POJOs (plain old Java objects) from a repository. A POJO
 is an `Entity` (also referred to as a _Data Object_) within the system which captures the values
 of a domain-specific object. This library provides both file-based (for development and testing)
 and MongoDB-based (for Production and Test) implementations.
