@@ -8,7 +8,7 @@
     <artifactId>ereefs-pojo</artifactId>
     <name>eReef POJO library</name>
 
-    <version>1.7.4</version>
+    <version>1.7.5</version>
     <licenses>
         <license>
             <name>MIT License</name>
