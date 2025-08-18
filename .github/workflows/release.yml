@@ -22,7 +22,7 @@ jobs:
 
     # Run the tests in a Maven Docker container.
     container:
-      image: maven:3.6-alpine
+      image: maven:3.6-jdk-8
       env:
         MONGODB_URL: 'mongodb://mongodb:27017'
 
