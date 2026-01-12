@@ -1,0 +1,11 @@
+{
+  "type": "basic",
+  "_id": "Task_basic_3",
+  "jobId": "Job_basic",
+  "productDefinitionId": "product_definition",
+  "stage": "high_priority",
+  "dependsOn": [
+    "Task_basic_2"
+  ]
+}
+

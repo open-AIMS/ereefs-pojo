@@ -29,6 +29,14 @@ public enum Stage {
      * also be disabled or deleted.
      */
     @JsonProperty("discontinued")
-    DISCONTINUED;
+    DISCONTINUED,
+
+    /**
+     * Lifecycle {@code Stage} meaning that the entity requires immediate attention and processing.
+     * For example, a {@code Product} or {@code Task} that is {@code high_priority} should be
+     * processed on a separate job queue to make sure it is processed as soon as possible.
+     */
+    @JsonProperty("high_priority")
+    HIGH_PRIORITY
 
 }

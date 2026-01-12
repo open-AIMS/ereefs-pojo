@@ -43,7 +43,7 @@ abstract public class AbstractTaskDaoImplTest {
         List<Task> tasks = dao.getByJobId(BASIC_JOB_ID);
         Assertions
             .assertThat(tasks)
-            .hasSize(2);
+            .hasSize(3);
     }
 
     /**

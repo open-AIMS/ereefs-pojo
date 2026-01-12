@@ -48,6 +48,19 @@ public class TaskInstantiationTest {
             .hasSize(1)
             .contains("Task_basic_1");
 
+        final Task task3 = dao.getById("Task_basic_3");
+        Assertions
+            .assertThat(task3)
+            .isExactlyInstanceOf(Task.class)
+            .hasFieldOrPropertyWithValue("id", "Task_basic_3")
+            .hasFieldOrPropertyWithValue("jobId", "Job_basic")
+            .hasFieldOrPropertyWithValue("productDefinitionId", "product_definition")
+            .hasFieldOrPropertyWithValue("stage", Stage.HIGH_PRIORITY);
+        Assertions
+            .assertThat(task3.getDependsOnIds())
+            .hasSize(1)
+            .contains("Task_basic_2");
+
     }
 
     /**
