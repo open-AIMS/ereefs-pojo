@@ -4,8 +4,6 @@
 SCRIPT=$(readlink -f "$0")
 SCRIPT_PATH=$(dirname "$SCRIPT")
 
-docker image prune --force
-docker container prune --force
 docker network prune --force
 
 # Start the service.
